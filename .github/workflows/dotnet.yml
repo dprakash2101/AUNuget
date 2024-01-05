@@ -23,7 +23,8 @@ jobs:
       run: dotnet build --no-restore
       
     - name: Build Package
-      run: dotnet pack -c Release --output github-package/
+      run: dotnet pack -c Release --output github-package/ --version-suffix $(date +"%Y%m%d%H%M%S")
+
 
     - name: Commit and Push Package
       run: |
