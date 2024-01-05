@@ -21,7 +21,7 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-
+      
     - name: Build Package
       run: dotnet pack -c Release --output github-package/
 
