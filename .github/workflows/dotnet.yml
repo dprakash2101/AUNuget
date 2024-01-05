@@ -48,4 +48,4 @@ jobs:
         run: dotnet restore
 
       - name: Publish to NuGet
-        run: dotnet nuget push ./github-package/*.nupkg --source https://api.nuget.org/dprakash2101/index.json --api-key ${{ secrets.NUGET_API_KEY }}
+        run: dotnet nuget push ./github-package/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
