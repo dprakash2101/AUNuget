@@ -1,15 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo><!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
-    <TargetFramework>net8.0;net7.0;net6.0;net5.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <TargetFrameworks>net8.0;net7.0;net6.0;net5.0</TargetFrameworks>
     <AssemblyName>EFCrud</AssemblyName>
     <PackageId>EFCrud</PackageId>
     <OutputType>Library</OutputType>
     <Authors>OpenAPI</Authors>
     <Company>OpenAPI</Company>
     <AssemblyTitle>OpenAPI Library</AssemblyTitle>
-    <Description>A library generated from a OpenAPI doc</Description>
+    <Description>A library generated from an OpenAPI doc</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>EFCrud</RootNamespace>
     <Version>1.0.0</Version>
@@ -19,7 +19,9 @@
     <PackageReleaseNotes>Minor update</PackageReleaseNotes>
     <Nullable>annotations</Nullable>
   </PropertyGroup>
-  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Add conditional references for .NET 5.0 -->
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" Condition="'$(TargetFramework)' == 'net5.0'" />
 
     <!-- Add conditional references for .NET 6.0 and .NET 7.0 -->
@@ -29,9 +31,12 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="RestSharp" Version="110.2.0" />
     <PackageReference Include="Polly" Version="8.1.0" />
-  
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="System.Web" />
- 
+  </ItemGroup>
+
   <ItemGroup>
     <Reference Include="System.Web" />
   </ItemGroup>
