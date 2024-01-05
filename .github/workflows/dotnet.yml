@@ -22,11 +22,6 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
 
-  build-package:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
     - name: Build Package
       run: dotnet pack -c Release --output github-package/
 
