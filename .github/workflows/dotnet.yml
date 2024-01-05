@@ -21,15 +21,7 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-
-  build-package:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Set working directory
-      run: cd $GITHUB_WORKSPACE
-
+      
     - name: Build Package
       run: dotnet pack -c Release --output github-package/
 
