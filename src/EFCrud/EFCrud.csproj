@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo><!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net8.0;net7.0;net6.0;net5.0</TargetFramework>
     <AssemblyName>EFCrud</AssemblyName>
     <PackageId>EFCrud</PackageId>
     <OutputType>Library</OutputType>
