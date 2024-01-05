@@ -1,0 +1,526 @@
+openapi: 3.0.1
+info:
+  title: EmployeeEFCrud
+  version: "1.0"
+servers:
+- url: https://localhost:7217/
+paths:
+  /api/Auth/register:
+    post:
+      parameters:
+      - explode: true
+        in: query
+        name: role
+        required: false
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Userdto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Userdto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Userdto'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: Success
+      tags:
+      - Auth
+  /api/Auth/login:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Userdto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Userdto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Userdto'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: Success
+      tags:
+      - Auth
+  /api/Employees:
+    get:
+      parameters:
+      - explode: true
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: role
+        required: false
+        schema:
+          $ref: '#/components/schemas/UserRoles'
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Employee'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Employee'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Employee'
+                type: array
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - oauth2: []
+      tags:
+      - Employees
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Employee'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - oauth2: []
+      tags:
+      - Employees
+  /api/Employees/{id}:
+    delete:
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - oauth2: []
+      tags:
+      - Employees
+    get:
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Employee'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - oauth2: []
+      tags:
+      - Employees
+    put:
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        "200":
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - oauth2: []
+      tags:
+      - Employees
+  /api/Features/{id}:
+    delete:
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      - explode: true
+        in: query
+        name: isdeleted
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: isactive
+        required: false
+        schema:
+          type: boolean
+        style: form
+      responses:
+        "200":
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - oauth2: []
+      tags:
+      - Features
+    put:
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      - explode: true
+        in: query
+        name: isman
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: issup
+        required: false
+        schema:
+          type: boolean
+        style: form
+      responses:
+        "200":
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - oauth2: []
+      tags:
+      - Features
+  /api/Roles/Show-roles:
+    get:
+      responses:
+        "200":
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - oauth2: []
+      tags:
+      - Roles
+  /api/Roles/Show-EmployeeRoles:
+    get:
+      responses:
+        "200":
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - oauth2: []
+      tags:
+      - Roles
+  /api/Roles/Add-roles:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Roles'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Roles'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Roles'
+      responses:
+        "200":
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - oauth2: []
+      tags:
+      - Roles
+  /api/Roles/Add-EmployeeRole:
+    post:
+      parameters:
+      - explode: true
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: role
+        required: false
+        schema:
+          $ref: '#/components/schemas/UserRoles'
+        style: form
+      responses:
+        "200":
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - oauth2: []
+      tags:
+      - Roles
+  /api/Roles/Delete-EmpRole:
+    delete:
+      parameters:
+      - explode: true
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: role
+        required: false
+        schema:
+          $ref: '#/components/schemas/UserRoles'
+        style: form
+      responses:
+        "200":
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - oauth2: []
+      tags:
+      - Roles
+components:
+  schemas:
+    Employee:
+      additionalProperties: false
+      example:
+        fatherName: fatherName
+        roles: roles
+        employeeId: 0
+        experience: 1
+        isActive: true
+        bloodGroup: bloodGroup
+        isSupervisor: true
+        isDeleted: true
+        dateOfCreated: 2000-01-23T04:56:07.000+00:00
+        name: name
+        dateOfUpdated: 2000-01-23T04:56:07.000+00:00
+        isManager: true
+        department: department
+        age: 6
+      properties:
+        employeeId:
+          format: int32
+          type: integer
+        name:
+          nullable: true
+          type: string
+        age:
+          format: int32
+          type: integer
+        department:
+          nullable: true
+          type: string
+        experience:
+          format: int32
+          type: integer
+        bloodGroup:
+          nullable: true
+          type: string
+        fatherName:
+          nullable: true
+          type: string
+        isDeleted:
+          type: boolean
+        isActive:
+          type: boolean
+        dateOfCreated:
+          format: date-time
+          type: string
+        dateOfUpdated:
+          format: date-time
+          type: string
+        roles:
+          nullable: true
+          type: string
+        isSupervisor:
+          type: boolean
+        isManager:
+          type: boolean
+      type: object
+    Roles:
+      additionalProperties: false
+      example:
+        role_Id: 0
+        roleName: roleName
+      properties:
+        role_Id:
+          format: int32
+          type: integer
+        roleName:
+          nullable: true
+          type: string
+      type: object
+    User:
+      additionalProperties: false
+      example:
+        role: role
+        userName: userName
+        passwordHash: passwordHash
+      properties:
+        userName:
+          nullable: true
+          type: string
+        passwordHash:
+          nullable: true
+          type: string
+        role:
+          nullable: true
+          type: string
+      type: object
+    UserRoles:
+      enum:
+      - 1
+      - 2
+      - 3
+      - 4
+      format: int32
+      type: integer
+    Userdto:
+      additionalProperties: false
+      example:
+        password: password
+        username: username
+      properties:
+        username:
+          nullable: true
+          type: string
+        password:
+          nullable: true
+          type: string
+      type: object
+  securitySchemes:
+    oauth2:
+      in: header
+      name: Authorization
+      type: apiKey
+

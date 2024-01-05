@@ -1,59 +1,77 @@
-# EFCrud.AuthApi
+# EFCrud.Api.AuthApi
 
 All URIs are relative to *https://localhost:7217*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**api_auth_login_post**](AuthApi.md#api_auth_login_post) | **POST** /api/Auth/login | 
-[**api_auth_register_post**](AuthApi.md#api_auth_register_post) | **POST** /api/Auth/register | 
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**ApiAuthLoginPost**](AuthApi.md#apiauthloginpost) | **POST** /api/Auth/login |  |
+| [**ApiAuthRegisterPost**](AuthApi.md#apiauthregisterpost) | **POST** /api/Auth/register |  |
 
-
-# **api_auth_login_post**
-> User api_auth_login_post(userdto=userdto)
+<a id="apiauthloginpost"></a>
+# **ApiAuthLoginPost**
+> User ApiAuthLoginPost (Userdto? userdto = null)
 
 
 
 ### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using EFCrud.Api;
+using EFCrud.Client;
+using EFCrud.Model;
 
+namespace Example
+{
+    public class ApiAuthLoginPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://localhost:7217";
+            var apiInstance = new AuthApi(config);
+            var userdto = new Userdto?(); // Userdto? |  (optional) 
 
-```python
-import time
-import os
-import EFCrud
-from EFCrud.models.user import User
-from EFCrud.models.userdto import Userdto
-from EFCrud.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://localhost:7217
-# See configuration.py for a list of all supported configuration parameters.
-configuration = EFCrud.Configuration(
-    host = "https://localhost:7217"
-)
-
-
-# Enter a context with an instance of the API client
-with EFCrud.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = EFCrud.AuthApi(api_client)
-    userdto = EFCrud.Userdto() # Userdto |  (optional)
-
-    try:
-        api_response = api_instance.api_auth_login_post(userdto=userdto)
-        print("The response of AuthApi->api_auth_login_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling AuthApi->api_auth_login_post: %s\n" % e)
+            try
+            {
+                User result = apiInstance.ApiAuthLoginPost(userdto);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AuthApi.ApiAuthLoginPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
 ```
 
+#### Using the ApiAuthLoginPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
 
+```csharp
+try
+{
+    ApiResponse<User> response = apiInstance.ApiAuthLoginPostWithHttpInfo(userdto);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AuthApi.ApiAuthLoginPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userdto** | [**Userdto**](Userdto.md)|  | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **userdto** | [**Userdto?**](Userdto?.md) |  | [optional]  |
 
 ### Return type
 
@@ -68,62 +86,81 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
-### HTTP response details
 
+### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_auth_register_post**
-> User api_auth_register_post(role=role, userdto=userdto)
+<a id="apiauthregisterpost"></a>
+# **ApiAuthRegisterPost**
+> User ApiAuthRegisterPost (string? role = null, Userdto? userdto = null)
 
 
 
 ### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using EFCrud.Api;
+using EFCrud.Client;
+using EFCrud.Model;
 
+namespace Example
+{
+    public class ApiAuthRegisterPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://localhost:7217";
+            var apiInstance = new AuthApi(config);
+            var role = "role_example";  // string? |  (optional) 
+            var userdto = new Userdto?(); // Userdto? |  (optional) 
 
-```python
-import time
-import os
-import EFCrud
-from EFCrud.models.user import User
-from EFCrud.models.userdto import Userdto
-from EFCrud.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://localhost:7217
-# See configuration.py for a list of all supported configuration parameters.
-configuration = EFCrud.Configuration(
-    host = "https://localhost:7217"
-)
-
-
-# Enter a context with an instance of the API client
-with EFCrud.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = EFCrud.AuthApi(api_client)
-    role = 'role_example' # str |  (optional)
-    userdto = EFCrud.Userdto() # Userdto |  (optional)
-
-    try:
-        api_response = api_instance.api_auth_register_post(role=role, userdto=userdto)
-        print("The response of AuthApi->api_auth_register_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling AuthApi->api_auth_register_post: %s\n" % e)
+            try
+            {
+                User result = apiInstance.ApiAuthRegisterPost(role, userdto);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AuthApi.ApiAuthRegisterPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
 ```
 
+#### Using the ApiAuthRegisterPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
 
+```csharp
+try
+{
+    ApiResponse<User> response = apiInstance.ApiAuthRegisterPostWithHttpInfo(role, userdto);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AuthApi.ApiAuthRegisterPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **role** | **str**|  | [optional] 
- **userdto** | [**Userdto**](Userdto.md)|  | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **role** | **string?** |  | [optional]  |
+| **userdto** | [**Userdto?**](Userdto?.md) |  | [optional]  |
 
 ### Return type
 
@@ -138,11 +175,11 @@ No authorization required
  - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
-### HTTP response details
 
+### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+| **200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
