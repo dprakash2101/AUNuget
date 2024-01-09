@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <TargetFrameworks>net8.0;net7.0;net6.0;net5.0;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netcoreapp3.1;net5.0;net6.0;net7.0;net8.0</TargetFrameworks>
     <AssemblyName>EFCrud</AssemblyName>
     <PackageId>EFCrud</PackageId>
     <OutputType>Library</OutputType>
@@ -12,7 +12,7 @@
     <Description>A library generated from EFCRUD open api spec</Description>
     <Copyright>MIT</Copyright>
     <RootNamespace>EFCrud</RootNamespace>
-    <Version>1.0.5</Version>
+    <Version>1.0.4</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EFCrud.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/dprakash2101/AUNuget.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -22,16 +22,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Add conditional references for .NET 5.0 -->
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" Condition="'$(TargetFramework)' == 'net5.0'" />
-
-    <!-- Add conditional references for .NET 6.0 and .NET 7.0 -->
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" Condition="'$(TargetFramework)' == 'net6.0' Or '$(TargetFramework)' == 'net7.0'" />
-
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="JsonSubTypes" Version="2.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="RestSharp" Version="110.2.0" />
     <PackageReference Include="Polly" Version="8.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Pack>true</Pack>
+      <PackagePath>/</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
