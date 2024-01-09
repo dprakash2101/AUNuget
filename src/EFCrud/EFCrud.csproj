@@ -3,6 +3,7 @@
   <PropertyGroup>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <TargetFrameworks>netstandard2.0;netcoreapp3.1;net5.0;net6.0;net7.0;net8.0</TargetFrameworks>
+    <LangVersion>8.0</LangVersion> 
     <AssemblyName>EFCrud</AssemblyName>
     <PackageId>EFCrud</PackageId>
     <OutputType>Library</OutputType>
@@ -17,7 +18,7 @@
     <RepositoryUrl>https://github.com/dprakash2101/AUNuget.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Minor update</PackageReleaseNotes>
-    <Nullable>annotations</Nullable>
+    <Nullable>enable</Nullable> 
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
@@ -27,6 +28,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="RestSharp" Version="110.2.0" />
     <PackageReference Include="Polly" Version="8.1.0" />
+   
   </ItemGroup>
 
   <ItemGroup>
@@ -37,11 +39,4 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="System.Web" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="System.Web" />
-  </ItemGroup>
 </Project>
