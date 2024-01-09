@@ -11,10 +11,11 @@
     <AssemblyTitle>OEFCRUD Library</AssemblyTitle>
     <Description>A library generated from EFCRUD open api spec</Description>
     <Copyright>MIT</Copyright>
+    <Licence>MIT</Licence>
     <RootNamespace>EFCrud</RootNamespace>
     <Version>1.0.5</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EFCrud.xml</DocumentationFile>
-    <RepositoryUrl>https://github.com/dprakash2101/EFCrud.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/dprakash2101/AUNuget.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Minor update</PackageReleaseNotes>
     <Nullable>annotations</Nullable>
