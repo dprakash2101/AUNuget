@@ -6,15 +6,15 @@
     <AssemblyName>EFCrud</AssemblyName>
     <PackageId>EFCrud</PackageId>
     <OutputType>Library</OutputType>
-    <Authors>OpenAPI</Authors>
-    <Company>OpenAPI</Company>
-    <AssemblyTitle>OpenAPI Library</AssemblyTitle>
-    <Description>A library generated from an OpenAPI doc</Description>
-    <Copyright>No Copyright</Copyright>
+    <Authors>DeviPrakash</Authors>
+    <Company>Prakash</Company>
+    <AssemblyTitle>OEFCRUD Library</AssemblyTitle>
+    <Description>A library generated from EFCRUD open api spec</Description>
+    <Copyright>MIT</Copyright>
     <RootNamespace>EFCrud</RootNamespace>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EFCrud.xml</DocumentationFile>
-    <RepositoryUrl>https://github.com/GIT_USER_ID/GIT_REPO_ID.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/dprakash2101/EFCrud.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Minor update</PackageReleaseNotes>
     <Nullable>annotations</Nullable>
