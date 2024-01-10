@@ -13,7 +13,7 @@
     <Copyright>MIT</Copyright>
     <Licence>MIT</Licence>
     <RootNamespace>EFCrud</RootNamespace>
-    <Version>1.0.5</Version>
+    <Version></Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EFCrud.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/dprakash2101/AUNuget.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

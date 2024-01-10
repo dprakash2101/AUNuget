@@ -1,0 +1,10 @@
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/bin/Debug/netcoreapp3.1/EFCrud.xml
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/bin/Debug/netcoreapp3.1/EFCrud.deps.json
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/bin/Debug/netcoreapp3.1/EFCrud.dll
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/bin/Debug/netcoreapp3.1/EFCrud.pdb
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/obj/Debug/netcoreapp3.1/EFCrud.csproj.AssemblyReference.cache
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/obj/Debug/netcoreapp3.1/EFCrud.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/obj/Debug/netcoreapp3.1/EFCrud.csproj.CoreCompileInputs.cache
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/obj/Debug/netcoreapp3.1/EFCrud.sourcelink.json
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/obj/Debug/netcoreapp3.1/EFCrud.dll
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/obj/Debug/netcoreapp3.1/EFCrud.pdb

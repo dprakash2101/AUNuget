@@ -1,0 +1,12 @@
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/bin/Debug/net7.0/EFCrud.xml
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/bin/Debug/net7.0/EFCrud.deps.json
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/bin/Debug/net7.0/EFCrud.dll
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/bin/Debug/net7.0/EFCrud.pdb
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/obj/Debug/net7.0/EFCrud.csproj.AssemblyReference.cache
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/obj/Debug/net7.0/EFCrud.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/obj/Debug/net7.0/EFCrud.csproj.CoreCompileInputs.cache
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/obj/Debug/net7.0/EFCrud.sourcelink.json
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/obj/Debug/net7.0/EFCrud.dll
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/obj/Debug/net7.0/refint/EFCrud.dll
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/obj/Debug/net7.0/EFCrud.pdb
+/home/runner/work/AUNuget/AUNuget/src/EFCrud/obj/Debug/net7.0/ref/EFCrud.dll
