@@ -2,37 +2,48 @@ name: .NET
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 7.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-      
-    - name: Build Package
-      run: dotnet pack -c Release --output github-package/ --version-suffix $(date +"%Y%m%d%H%M%S")
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --no-restore
 
+      - name: Get Release Version
+        id: get_release_version
+        run: echo "::set-output name=version::$(git describe --tags --abbrev=0)"
 
-    - name: Commit and Push Package
-      run: |
-        git config --local user.email "dprakash2101@gmail.com"
-        git config --local user.name "dprakash2101"
-        git add github-package/*.nupkg
-        git commit -m "Add NuGet package" || true
-        git push
+      - name: Update Version in .csproj
+        run: |
+          version=${{ steps.get_release_version.outputs.version }}
+          sed -i "s/<Version>.*<\/Version>/<Version>$version<\/Version>/" YourProject.csproj
+          git add YourProject.csproj
+          git commit -m "Update version in .csproj" || true
+          git push
+
+      - name: Build Package
+        run: dotnet pack -c Release --output github-package/ --version-suffix $(date +"%Y%m%d%H%M%S")
+
+      - name: Commit and Push Package
+        run: |
+          git config --local user.email "dprakash2101@gmail.com"
+          git config --local user.name "dprakash2101"
+          git add github-package/*.nupkg
+          git commit -m "Add NuGet package" || true
+          git push
+
   publish:
     runs-on: ubuntu-latest
     needs: build
@@ -48,6 +59,10 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
 
+      - name: Include Readme and License files
+        run: |
+          cp path/to/Readme.md .
+          cp path/to/License.txt .
+
       - name: Publish to NuGet
         run: dotnet nuget push ./github-package/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
-
