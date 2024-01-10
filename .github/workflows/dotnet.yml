@@ -1,10 +1,11 @@
 name: .NET
 
 on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Specify the version'
+        required: true
 
 jobs:
   build:
@@ -21,15 +22,9 @@ jobs:
       - name: Build
         run: dotnet build --no-restore
 
-      - name: Get Release Version
-        id: get_release_version
-        run: |
-          tag=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0-$(git rev-parse --short HEAD)")
-          echo "VERSION=$tag" >> $GITHUB_ENV
-
       - name: Update Version in .csproj
         run: |
-          version=${{ steps.get_release_version.outputs.version }}
+          version=${{ github.event.inputs.version }}
           sed -i "s/<Version>.*<\/Version>/<Version>$version<\/Version>/" src/EFCrud/EFCrud.csproj
           git add .
           git commit -m "Update version in .csproj" || true
