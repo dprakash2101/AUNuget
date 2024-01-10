@@ -23,7 +23,9 @@ jobs:
 
       - name: Get Release Version
         id: get_release_version
-        run: echo "::set-output name=version::$(git describe --tags --abbrev=0)"
+        run: |
+          tag=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0-$(git rev-parse --short HEAD)")
+          echo "VERSION=$tag" >> $GITHUB_ENV
 
       - name: Update Version in .csproj
         run: |
@@ -58,11 +60,6 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore
-
-      - name: Include Readme and License files
-        run: |
-          cp README.md .
-          cp LICENSE .
 
       - name: Publish to NuGet
         run: dotnet nuget push ./github-package/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate

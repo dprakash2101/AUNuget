@@ -9,9 +9,9 @@
     <Authors>DeviPrakash</Authors>
     <Company>Prakash</Company>
     <AssemblyTitle>OEFCRUD Library</AssemblyTitle>
-    <Description>A library generated from EFCRUD open api spec</Description>
+    <Description>A library generated from EFCRUD open API spec</Description>
     <Copyright>MIT</Copyright>
-    <Licence>MIT</Licence>
+    <License>MIT</License>
     <RootNamespace>EFCrud</RootNamespace>
     <Version></Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\EFCrud.xml</DocumentationFile>
@@ -36,6 +36,8 @@
 
   <ItemGroup>
     <None Remove="System.Web" />
+    <None Include="README.md" />
+    <None Include="LICENSE" />
   </ItemGroup>
 
   <ItemGroup>
