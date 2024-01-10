@@ -29,7 +29,7 @@ jobs:
         run: |
           version=${{ steps.get_release_version.outputs.version }}
           sed -i "s/<Version>.*<\/Version>/<Version>$version<\/Version>/" src/EFCrud/EFCrud.csproj
-          git add YourProject.csproj
+          git add .
           git commit -m "Update version in .csproj" || true
           git push
 
