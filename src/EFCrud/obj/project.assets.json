@@ -1385,7 +1385,7 @@
     "/home/runner/.nuget/packages/": {}
   },
   "project": {
-    "version": "1.0.5",
+    "version": "1.0.0",
     "restore": {
       "projectUniqueName": "/home/runner/work/AUNuget/AUNuget/src/EFCrud/EFCrud.csproj",
       "projectName": "EFCrud",

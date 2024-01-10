@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "EFCrud/1.0.5": {
+      "EFCrud/1.0.0": {
         "dependencies": {
           "JsonSubTypes": "2.0.1",
           "Newtonsoft.Json": "13.0.3",
@@ -75,7 +75,7 @@
     }
   },
   "libraries": {
-    "EFCrud/1.0.5": {
+    "EFCrud/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
