@@ -26,6 +26,8 @@ jobs:
         run: |
           version=${{ github.event.inputs.version }}
           sed -i "s/<Version>.*<\/Version>/<Version>$version<\/Version>/" src/EFCrud/EFCrud.csproj
+          git config --local user.email "dprakash2101@gmail.com"
+          git config --local user.name "dprakash2101"
           git add .
           git commit -m "Update version in .csproj" || true
           git push
