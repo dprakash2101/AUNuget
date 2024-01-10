@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zhmXWY0RTR2HvoPwmylVBL+9PbJNPMr3mYxZ89WTrz87VY/h5/Aq8nSUcD5OaAEQCfF3Udf86Y7E805rWgWMYQ==",
+  "dgSpecHash": "I6hl7EurfVguXcUOdPRqUQRahnGOUsZmE1duVZ7hDoFqkns1QGZfSura0Gy2rIuWiIFwacZMh5pyxMsMab5Bzw==",
   "success": true,
   "projectFilePath": "/home/runner/work/AUNuget/AUNuget/src/EFCrud.Test/EFCrud.Test.csproj",
   "expectedPackageFiles": [
