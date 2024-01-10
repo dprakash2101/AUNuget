@@ -37,7 +37,8 @@
 
   <ItemGroup>
     <None Remove="System.Web" />
-    <None Include="README.md" Pack="true" PackagePath="/"/> 
+    <None Include="README.md" Pack="true" PackagePath="/" />
+
     <None Include="LICENSE" />
   </ItemGroup>
 
