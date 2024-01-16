@@ -17,11 +17,14 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build --no-restore
+      - name: Get latest tag
+        run:  |
+          git fetch --tags
+          version=$(git describe --tags $(git rev-list --tags --max-count=1))
 
       - name: Update Version in .csproj
         run: |
-          git fetch --tags
-          version=$(git describe --tags $(git rev-list --tags --max-count=1))
+          
           sed -i "s/<Version>.*<\/Version>/<Version>$version<\/Version>/" src/EFCrud/EFCrud.csproj
           git config --local user.email "dprakash2101@gmail.com"
           git config --local user.name "dprakash2101"
