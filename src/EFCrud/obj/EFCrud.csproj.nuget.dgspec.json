@@ -5,7 +5,7 @@
   },
   "projects": {
     "/home/runner/work/AUNuget/AUNuget/src/EFCrud/EFCrud.csproj": {
-      "version": "1.0.0",
+      "version": "1.9.0",
       "restore": {
         "projectUniqueName": "/home/runner/work/AUNuget/AUNuget/src/EFCrud/EFCrud.csproj",
         "projectName": "EFCrud",
