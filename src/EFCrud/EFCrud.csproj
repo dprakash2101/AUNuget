@@ -38,6 +38,9 @@
   <ItemGroup>
     <None Remove="System.Web" />
     <None Include="README.md" Pack="true" PackagePath="/" />
+    <None Update="docs\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
 
     <None Include="LICENSE" />
   </ItemGroup>
