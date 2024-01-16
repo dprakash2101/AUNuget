@@ -34,8 +34,7 @@ jobs:
           git push
 
       - name: Build Package
-        run: dotnet pack -c Release --output github-package/ --version-suffix $(date +"%Y%m%d%H%M%S")
-
+        run: dotnet pack -c Release --output github-package/ 
       - name: Commit and Push Package
         run: |
           git config --local user.email "dprakash2101@gmail.com"
