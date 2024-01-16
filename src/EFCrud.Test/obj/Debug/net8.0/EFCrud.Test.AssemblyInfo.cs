@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EFCrud.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98c446fdec7679fd98016f70ffcb2c92752a10eb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca399c79ce567181d810f5be97365165c0b88ad5")]
 [assembly: System.Reflection.AssemblyProductAttribute("EFCrud.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EFCrud.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
