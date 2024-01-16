@@ -30,7 +30,6 @@ jobs:
           git config --local user.name "dprakash2101"
           git add .
           git commit -m "Update version in .csproj" || true
-          git pull
           git push
 
       - name: Build Package
@@ -41,7 +40,6 @@ jobs:
           git config --local user.name "dprakash2101"
           git add github-package/*.nupkg
           git commit -m "Add NuGet package" || true
-          git pull 
           git push
 
   publish:
