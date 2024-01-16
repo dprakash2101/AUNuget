@@ -22,13 +22,11 @@ jobs:
         run: |
           git fetch --tags
           version=$(git describe --tags $(git rev-list --tags --max-count=1))
-    
           sed -i "s/<Version>.*<\/Version>/<Version>$version<\/Version>/" src/EFCrud/EFCrud.csproj
           git config --local user.email "dprakash2101@gmail.com"
           git config --local user.name "dprakash2101"
           git add .
           git commit -m "Update version in .csproj" || true
-          git pull
           git push origin main
 
       - name: Build Package
@@ -39,8 +37,7 @@ jobs:
           git config --local user.email "dprakash2101@gmail.com"
           git config --local user.name "dprakash2101"
           git add github-package/*.nupkg
-          git commit -m "Add NuGet package" || true
-          git pull 
+          git commit -m "Add NuGet package" || true 
           git push
 
   publish:
