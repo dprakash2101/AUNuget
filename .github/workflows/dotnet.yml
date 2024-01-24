@@ -10,6 +10,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:                # Job-level permissions configuration starts here
+      contents: write           # 'write' access to repository contents
+      pull-requests: write
 
     steps:
       - uses: actions/checkout@v3
@@ -40,4 +43,4 @@ jobs:
           git config --local user.name "dprakash2101"
           git add github-package/*.nupkg
           git commit -m "Add NuGet package" || true
-          git push
+          git push https://${{secrets.SDK_TOKEN}}@github.com/dprakash2101/AUNuget.git main
